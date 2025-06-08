@@ -1,3 +1,4 @@
+
 # VOLTIC: Inteligência Energética para Cidades do Futuro
 
 <div align="center">
@@ -20,9 +21,9 @@ Utilizando tecnologias emergentes de IoT, inteligência artificial e análise de
 
 ## Conteúdo do Repositório
 
-- **/diagrams**: Diagramas completos do projeto, incluindo diagramas elétricos e de arquitetura.
-- **/frontend**: Código-fonte do frontend, responsável pela interface de visualização e interação com os dados.
-- **/backend**: Código-fonte do backend, que processa, armazena e gerencia os dados coletados pelos sensores.
+- **/diagrams**: Diagramas completos do projeto, incluindo diagramas elétricos e de arquitetura.  
+- **/frontend**: Código-fonte do frontend, responsável pela interface de visualização e interação com os dados.  
+- **/backend**: Código-fonte do backend, que processa, armazena e gerencia os dados coletados pelos sensores.  
 - **/hardware-firmware**: Esquemas elétricos, diagramas e código do firmware para o dispositivo IoT.
 
 ---
@@ -36,7 +37,7 @@ Utilizando tecnologias emergentes de IoT, inteligência artificial e análise de
 
 ### Backend
 - **Spring Boot**
-- **Azure CosmosDB** 
+- **Azure CosmosDB**  
 - **Azure IoT Hub**
 
 ### Frontend
@@ -45,17 +46,25 @@ Utilizando tecnologias emergentes de IoT, inteligência artificial e análise de
 - **Kubb.js**
 
 ### Documentação & Diagramas
-- **KiCad** para diagramas elétricos
+- **KiCad** para diagramas elétricos  
 - Documentação em **PDF** e **Markdown**
 
 ---
 
 ## Objetivos do Projeto
 
-- **Monitoramento Contínuo**: Medir o consumo de energia em tempo real utilizando sensores inteligentes.
-- **Otimização do Consumo**: Identificar padrões e desperdícios para auxiliar na redução do consumo energético.
-- **Integração Completa**: Unir hardware, firmware, backend e frontend em um sistema integrado.
+- **Monitoramento Contínuo**: Medir o consumo de energia em tempo real utilizando sensores inteligentes.  
+- **Otimização do Consumo**: Identificar padrões e desperdícios para auxiliar na redução do consumo energético.  
+- **Integração Completa**: Unir hardware, firmware, backend e frontend em um sistema integrado.  
 - **Sustentabilidade**: Promover o uso consciente da energia elétrica, contribuindo para cidades mais inteligentes e sustentáveis.
+
+---
+
+## Mídia do Projeto
+
+> Vídeo demonstrando o projeto em ação:
+
+[![Projeto Voltic Overview](https://img.youtube.com/vi/h4qSAQyx33U/0.jpg)](https://www.youtube.com/watch?v=h4qSAQyx33U)
 
 ---
 
@@ -66,7 +75,7 @@ Utilizando tecnologias emergentes de IoT, inteligência artificial e análise de
 - **Backend**:
   - Java 21.0.2
   - Apache Maven 3.9.9
-  - ConsmosDB
+  - CosmosDB
   - IoT Hub com Device Cadastrado
 
 - **Frontend**:
@@ -78,18 +87,18 @@ Utilizando tecnologias emergentes de IoT, inteligência artificial e análise de
 
 ### Rodando o Backend
 
-1. Clone o repositório.
-2. Navegue até o diretório `/backend`.
-3. Configure as variáveis de ambiente conforme o arquivo `.env.example`.
+1. Clone o repositório.  
+2. Navegue até o diretório `/backend`.  
+3. Configure as variáveis de ambiente conforme o arquivo `.env.example`.  
 4. Execute:
    ```sh
    ./mvnw spring-boot:run
    ```
    ou o comando equivalente para Gradle.
 
-> Imporante dizer que, para rodar corretamente o backend, voce deve criar as variaveis em ambiente com as chaves de conexao.
+> Importante dizer que, para rodar corretamente o backend, você deve criar as variáveis de ambiente com as chaves de conexão:
 
-```shell
+```sh
 export SPRING_DATA_MONGODB_URI="mongodb:..."
 export AZURE_IOTHUB_CONNECTION_STRING="Endpoint=sb://..."
 ```
@@ -103,26 +112,26 @@ configuration.setAllowedOrigins(Arrays.asList(
     "http://localhost:3000", // Ambiente de desenvolvimento local
     "https://seu-front-end.exemplo.com" // Frontend em produção (ex: Vercel)
 ));
-
+```
 
 ### Rodando o Frontend
 
-1. Navegue até o diretório `/Frontend`.
+1. Navegue até o diretório `/Frontend`.  
 2. Instale as dependências:
    ```sh
    npm install
    ```
-3. Devemos assim como para o Backend, configurar as variaveis de ambiente:
+3. Configure as variáveis de ambiente:
 
-Para Dev:
+- Para Dev:
 
-```shell
+```sh
 export NEXT_PUBLIC_API_URL="http://localhost:8080"
 ```
 
-Para Prod:
+- Para Prod:
 
-```shell
+```sh
 export NEXT_PUBLIC_API_URL="https://seu-back-end.exemplo.com"
 ```
 
@@ -135,40 +144,40 @@ export NEXT_PUBLIC_API_URL="https://seu-back-end.exemplo.com"
 
 Se for utilizar Docker para rodar o projeto, é importante adaptar os arquivos `Dockerfile` localizados em `/Frontend` e `/Backend` para incluir as variáveis de ambiente necessárias. Isso garante que:
 
-- O backend consiga se conectar corretamente ao banco de dados hospedado na Azure;
-- O frontend possa se comunicar com o backend;
+- O backend consiga se conectar corretamente ao banco de dados hospedado na Azure;  
+- O frontend possa se comunicar com o backend;  
 - Os *Origins* estejam configurados de forma adequada, respeitando o ambiente (desenvolvimento ou produção).
 
 Certifique-se de exportar variáveis como URLs da API, conexões com o banco e qualquer outro segredo necessário no ambiente de execução do contêiner.
 
+---
+
 ### Firmware e Hardware
 
-- Consulte a pasta `/Hardware` para acessar o código do firmware, e a pasta `Firmware` para diagramas e esquemas elétricos;
+- Consulte a pasta `/Hardware` para acessar o código do firmware, e a pasta `Diagrams/Kicad` para diagramas e esquemas elétricos;  
 - Utilize a **Arduino IDE** ou **PlatformIO** para programar o ESP32 com o código fornecido.
 
-Para que o Hardware consiga enviar os dados, e necessario gerar um SAS_TOKEN, para gerar precisa ter o Azure CLI, veja abaixo:
+Para que o hardware consiga enviar os dados, é necessário gerar um `SAS_TOKEN`. Para isso, é preciso ter o **Azure CLI** instalado:
 
-```shell
-az iot hub generate-sas-token \
-              --hub-name iothub-voltic \
-              --device-id ESP00 \
-              --duration 3600
+```sh
+az iot hub generate-sas-token
+            --hub-name iothub-voltic
+            --device-id ESP00
+            --duration 3600
 ```
 
-No nosso caso o nome do iot hub e `iothub-voltic`, o dispositivo e o `ESP00` a duracao do token colocamos `3600` para teste rapido. Segue imagem de informacao para verificar de onde os dados foram obitidos no servico. 
-Esse comando ira gerar o SAS_TOKEN que entra no `Hardware/firmware.ino`.
+No nosso caso, o nome do IoT Hub é `iothub-voltic`, o dispositivo é o `ESP00` e a duração do token foi definida como `3600` para testes rápidos.  
+Esse comando irá gerar o `SAS_TOKEN` que deve ser inserido no arquivo `Hardware/firmware.ino`.
 
-Nas duas figuras abaixo conseguimos notar onde encontramos respectivamente o nome do iot hub e o nome do dipostivo.
+Nas duas figuras abaixo conseguimos notar onde encontramos, respectivamente, o nome do IoT Hub e o nome do dispositivo:
 
 <details>
 <summary>Imagens Exemplo Infra</summary>
 
-Nome do iot hub:
-
+Nome do IoT Hub:  
 ![Nome iothub-voltic](./Infra/Voltic-IotHub1.png)
 
-Nome do dispositivo:
-
+Nome do dispositivo:  
 ![Nome do dispositivo](./Infra/Voltic-IotHub2.png)
 
 </details>
@@ -177,17 +186,16 @@ Nome do dispositivo:
 
 ## Documentação Adicional
 
-- [Documentação Completa em Português](./docs/VOLTIC_Documentacao.pdf)
-- [Diagramas Elétricos e Arquitetura](./Diagrams/)
+- [Diagrama Elétricos](./Diagrams/Kicad/Diagram.pdf)
 
 ---
 
 ## Resultados e Aplicações
 
-O VOLTIC foi desenvolvido para:
-- Monitorar e otimizar o consumo energético em **residências**, **empresas** e **espaços públicos**.
-- Oferecer suporte para **prefeituras** e gestores em suas políticas de sustentabilidade.
-- Facilitar a implementação de **cidades inteligentes** e **smart grids**.
+O VOLTIC foi desenvolvido para:  
+- Monitorar e otimizar o consumo energético em **residências**, **empresas** e **espaços públicos**;  
+- Oferecer suporte para **prefeituras** e gestores em suas políticas de sustentabilidade;  
+- Facilitar a implementação de **cidades inteligentes** e **smart grids**;  
 - Reduzir custos operacionais e impactos ambientais através de um uso mais consciente da energia.
 
 ---
@@ -202,5 +210,3 @@ O VOLTIC foi desenvolvido para:
 <div align="center">
   <sub>Projeto VOLTIC: Inteligência Energética para Cidades do Futuro</sub>
 </div>
-
-
