@@ -125,15 +125,15 @@ configuration.setAllowedOrigins(Arrays.asList(
 
 - Para Dev:
 
-```sh
-export NEXT_PUBLIC_API_URL="http://localhost:8080"
-```
+  ```sh
+  export NEXT_PUBLIC_API_URL="http://localhost:8080"
+  ```
 
 - Para Prod:
 
-```sh
-export NEXT_PUBLIC_API_URL="https://seu-back-end.exemplo.com"
-```
+  ```sh
+  export NEXT_PUBLIC_API_URL="https://seu-back-end.exemplo.com"
+  ```
 
 4. Inicie o servidor de desenvolvimento:
    ```sh
