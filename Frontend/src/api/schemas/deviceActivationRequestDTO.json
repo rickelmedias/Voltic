@@ -1,0 +1,1 @@
+{"type":"object","description":"Requisição para ativação de um dispositivo pelo código","properties":{"activationCode":{"type":"string","description":"Código único do dispositivo colado no físico","example":"ABC123DEF","minLength":1}},"required":["activationCode"],"x-readme-ref-name":"DeviceActivationRequestDTO"}
