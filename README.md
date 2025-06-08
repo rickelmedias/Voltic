@@ -23,7 +23,7 @@ Utilizando tecnologias emergentes de IoT, inteligência artificial e análise de
 
 - **/diagrams**: Diagramas completos do projeto, incluindo diagramas elétricos e de arquitetura.  
 - **/frontend**: Código-fonte do frontend, responsável pela interface de visualização e interação com os dados.  
-- **/backend**: Código-fonte do backend, que processa, armazena e gerencia os dados coletados pelos sensores.  
+- **/Backend**: Código-fonte do backend, que processa, armazena e gerencia os dados coletados pelos sensores.  
 - **/hardware-firmware**: Esquemas elétricos, diagramas e código do firmware para o dispositivo IoT.
 
 ---
@@ -88,7 +88,7 @@ Utilizando tecnologias emergentes de IoT, inteligência artificial e análise de
 ### Rodando o Backend
 
 1. Clone o repositório.  
-2. Navegue até o diretório `/backend`.  
+2. Navegue até o diretório `/Backend`.  
 3. Configure as variáveis de ambiente conforme o arquivo `.env.example`.  
 4. Execute:
    ```sh
