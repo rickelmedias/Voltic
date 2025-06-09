@@ -21,10 +21,10 @@ Utilizando tecnologias emergentes de IoT, inteligência artificial e análise de
 
 ## Conteúdo do Repositório
 
-- **/diagrams**: Diagramas completos do projeto, incluindo diagramas elétricos e de arquitetura.  
-- **/frontend**: Código-fonte do frontend, responsável pela interface de visualização e interação com os dados.  
+- **/Diagrams**: Diagramas completos do projeto, incluindo diagramas elétricos e de arquitetura.  
+- **/Frontend**: Código-fonte do frontend, responsável pela interface de visualização e interação com os dados.  
 - **/Backend**: Código-fonte do backend, que processa, armazena e gerencia os dados coletados pelos sensores.  
-- **/hardware-firmware**: Esquemas elétricos, diagramas e código do firmware para o dispositivo IoT.
+- **/Hardware**: Esquemas elétricos, diagramas e código do firmware para o dispositivo IoT.
 
 ---
 
